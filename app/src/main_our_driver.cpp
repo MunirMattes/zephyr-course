@@ -1,6 +1,7 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
+#include <our_drivers/our_driver.h>
 
 #define SLEEP_TIME_MS 1000
 
@@ -22,6 +23,9 @@ int main(void)
         ret = sensor_channel_get(dev, SENSOR_CHAN_AMBIENT_TEMP, &val);
         LOG_INF("Get: %d", ret);
         k_msleep(SLEEP_TIME_MS);
+
+        ret = our_driver_increment_counter(dev);
+        LOG_INF("Increment: %d", ret);
     }
     return 0;
 }

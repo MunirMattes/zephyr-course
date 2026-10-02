@@ -5,6 +5,7 @@ project(my_zephyr_app)
 
 if (CONFIG_OUR_DRIVER)
     target_sources(app PRIVATE src/main_our_driver.cpp)
+    target_include_directories(app PRIVATE include)
     add_subdirectory(drivers/our_driver)
 else ()
     target_sources(app PRIVATE src/main.cpp)
