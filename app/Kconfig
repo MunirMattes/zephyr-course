@@ -67,3 +67,4 @@ endmenu # "Expert Settings"
 endif # LED_SUBSYSTEM
 
 source "Kconfig.zephyr"
+rsource "drivers/our_driver/Kconfig"
